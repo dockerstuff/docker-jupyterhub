@@ -1,4 +1,4 @@
-ARG BASE_IMAGE=chbrandt/gispy:gdal
+ARG BASE_IMAGE=chbrandt/gispy:gdal-3.3.0
 FROM $BASE_IMAGE
 
 MAINTAINER "Carlos H Brandt <carloshenriquebrandt.gmail>"
@@ -23,8 +23,6 @@ RUN python3 -m pip install oauthenticator
 RUN [ which pip ] || update-alternatives --install /usr/bin/pip pip /usr/bin/pip3 1
 
 COPY ./jupyterhub.conf.d /jupyterhub.conf.d
-
-VOLUME /mnt/data
 
 EXPOSE 8000
 
