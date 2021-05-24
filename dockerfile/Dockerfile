@@ -28,4 +28,4 @@ VOLUME /mnt/data
 
 EXPOSE 8000
 
-CMD ["jupyterhub", "--config=/jupyterhub.conf.d/github_jupyter_config.py", "--port=8000"]
+CMD ["jupyterhub", "--config=/jupyterhub.conf.d/jupyter_config.py", "--port=8000"]
