@@ -1,3 +1,4 @@
+#ARG BASE_IMAGE=chbrandt/isis3:gispy
 ARG BASE_IMAGE=chbrandt/gispy:gdal-3.3.0
 FROM $BASE_IMAGE
 
@@ -20,7 +21,7 @@ RUN useradd -m -d /home/user -u $UID -g $GID -s /bin/bash user \
 
 RUN python3 -m pip install oauthenticator
 
-RUN [ which pip ] || update-alternatives --install /usr/bin/pip pip /usr/bin/pip3 1
+RUN update-alternatives --install /usr/bin/pip pip /usr/bin/pip3 1
 
 COPY ./jupyterhub.conf.d /jupyterhub.conf.d
 
